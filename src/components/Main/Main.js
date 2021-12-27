@@ -1,6 +1,6 @@
 import Component from '@/core/component';
 import MainElement from './Main.html';
-
+import './style.scss'
 class Main extends Component {
   constructor(config) {
     super(config)

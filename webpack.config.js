@@ -43,6 +43,14 @@ module.exports = (env, options) => {
             'style-loader',
             'css-loader',
             'sass-loader',
+            {
+              loader: 'sass-resources-loader',
+              options: {
+                resources: [
+                  "src/styles/_vars.scss",
+                ]
+              }
+            }
           ],
         }, {
           // test: /\.(png|svg|jpe?g|gif|ttf)$/,

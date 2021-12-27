@@ -1,29 +1,33 @@
 @import "../fonts/konstant-grotesk/grotesk.css";
 @import "normalize.css";
 @import "../fonts/konstant-grotesk/grotesk.css";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+
 
 body {
-  background-image: url('../assets/img/bg.png');
-  background-repeat: no-repeat;
-  background-size: 100%;
-
+  background-color: rgb(49, 39, 21);
   color: #fff;
-  font-family: 'Konstant Grotesk Book';
-
-  height: 100vh;
+  font-family: $header-font;
 }
 
+.header, .main {
+  opacity: 0;
+}
 .container {
   background-image: url('../assets/img/bg.png');
   background-repeat: no-repeat;
   background-size: 100%;
 
-  width: 700px;
-  margin: 20px auto;
+  width: 650px;
+  height: 90vh;
+  margin: 20px auto 0;
   padding: 20px 10px;
-  border: 1px solid red;
 }
 
+.show {
+  transition: opacity ease-in-out .8s;
+  opacity: 1;
+}
 
 .header {
   display: flex;
