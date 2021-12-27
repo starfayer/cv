@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Konstant Grotesk Book';
+    src: url('KonstantGroteskBook.eot');
+    src: local('Konstant Grotesk Book'), local('KonstantGroteskBook'),
+        url('KonstantGroteskBook.eot?#iefix') format('embedded-opentype'),
+        url('KonstantGroteskBook.woff2') format('woff2'),
+        url('KonstantGroteskBook.woff') format('woff'),
+        url('KonstantGroteskBook.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
