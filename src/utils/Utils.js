@@ -1,18 +1,17 @@
 export const Utils = {
   parseRequestURL: () => {
     const url = location.hash.slice(1).toLowerCase() || '/';
-
     const r = url.split('/');
 
     const request = {
-      resource: null,
       id: null,
+      resource: null,
       verb: null,
     };
 
+    request.id = r[0];
     request.resource = r[1];
-    request.id = r[2];
-    request.verb = r[3];
+    request.verb = r[2];
 
     return request;
   },
@@ -22,7 +21,6 @@ export const Utils = {
   htmlToElement: (htmlElement) => {
     const template = document.createElement('template');
     template.innerHTML = htmlElement;
-    console.log(template.content.firstChild)
     return template.content.firstChild;
   }
 };

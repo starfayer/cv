@@ -1,0 +1,13 @@
+.course {
+  transition: opacity ease-in-out .5s;
+  position: absolute;
+  right: 0;
+  width: 64%;
+  &__list {
+    font-family: $header-font;
+    padding: 0;
+  }
+  &__item {
+    margin-bottom: 10px;
+  }
+}

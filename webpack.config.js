@@ -3,17 +3,15 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer');
 
 const nothing = () => {};
 
 module.exports = (env, options) => {
-  const isProduction = options.mode === 'development';
-  const isAnalyze = env.analyze;
+  const isProduction = options.mode === 'production';
 
   return {
     mode: isProduction ? 'production' : 'development',
-    // devtool: isProduction ? 'source-map' : 'eval',
+    devtool: isProduction ? 'source-map' : 'eval',
     devtool: 'source-map',
     entry: ['./src/index.js'],
     output: {
@@ -53,11 +51,6 @@ module.exports = (env, options) => {
             }
           ],
         }, {
-          // test: /\.(png|svg|jpe?g|gif|ttf)$/,
-          // use: {
-          //   loader: 'file-loader',
-          // },
-        }, {
           test: /\.(eot|ttf|woff|svg|woff2)$/,
           type: 'asset/resource',
           generator: {
@@ -86,7 +79,6 @@ module.exports = (env, options) => {
       new HtmlWebpackPlugin({
         template: './src/index.html',
       }),
-      isAnalyze ? new BundleAnalyzerPlugin() : nothing,
       isProduction
         ? new CopyWebpackPlugin({ patterns: [{ from: './src/static', to: '.' }] })
         : nothing,

@@ -4,28 +4,19 @@ import './styles/style.scss';
 
 import { Utils } from './utils/Utils';
 import mainInstance from './components/Main';
-
-// const settingsSettings = new Settings();
+import courseInstance from './components/Course';
 
 const routes = {
   '/': mainInstance,
-  // '/rs': rsInstance
+  '/rs': courseInstance
 };
 
 const router = async () => {
-  const container = null || document.querySelector('.container')
-  const header = null || document.querySelector('.header');
-  const content = null || document.querySelector('.main');
-
   const request = Utils.parseRequestURL();
-  const parsedURL = (request.resource ? `/${request.resource}` : '/') + (request.id ? '/:id' : '') + (request.verb ? `/${request.verb}` : '');
+  const parsedURL = (request.id ? `/${request.id}` : '/') + (request.resource ? '/:resource' : '') + (request.verb ? `/${request.verb}` : '');
 
-  // const page = routes[parsedURL] ? routes[parsedURL] : error404Instance;
   const page = routes[parsedURL] ? routes[parsedURL] : null;
-
   await page.render();
-  
-  // await page.after_render();
 };
 
 function observation() {

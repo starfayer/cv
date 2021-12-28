@@ -1,4 +1,17 @@
+@mixin opacity-transition {
+  transition: opacity ease-in-out .8s;
+}
+
 $text-font-size: 12px;
 
 $header-font: "Konstant Grotesk Book";
 $text-font: "Inter", sans-serif;
+
+.show {
+  @include opacity-transition;
+  opacity: 1;
+}
+
+.hide {
+  opacity: 0;
+}
